@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55.0dp"
+    android:orientation="vertical" >
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shadow_line" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkslategrey" />
+    
+    <RadioGroup 
+        android:id="@+id/radio_group" 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+
+        <RadioButton
+            android:id="@+id/bar_home"
+            android:layout_weight="1"
+            style="@style/bottom_bar_style"
+            android:text="@string/bar_home_tile"
+            android:drawableTop="@drawable/home_selector" />
+        
+        <RadioButton
+            android:id="@+id/bar_live"
+            android:layout_weight="1"
+            style="@style/bottom_bar_style"
+            android:text="@string/bar_live_tile"
+            android:drawableTop="@drawable/live_selector" />
+        
+        <RadioButton
+            android:id="@+id/bar_column"
+            android:layout_weight="1"
+            style="@style/bottom_bar_style"
+            android:text="@string/bar_column_tile"
+            android:drawableTop="@drawable/column_selector" />
+        
+        <RadioButton
+            android:id="@+id/bar_topic"
+            android:layout_weight="1"
+            style="@style/bottom_bar_style"
+            android:text="@string/bar_topic_tile"
+            android:drawableTop="@drawable/topic_selector" />
+        
+        <RadioButton
+            android:id="@+id/bar_interact"
+            android:layout_weight="1"
+            style="@style/bottom_bar_style"
+            android:text="@string/bar_interact_tile"
+            android:drawableTop="@drawable/interact_selector" />
+        
+    </RadioGroup>
+
+</LinearLayout>
