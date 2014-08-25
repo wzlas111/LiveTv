@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/videoheader_bg"
+    android:orientation="horizontal"
+    android:gravity="center_vertical" >
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:drawableLeft="@drawable/navbar_icon_back_2x" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="title"
+         />
+
+</LinearLayout>

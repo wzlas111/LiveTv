@@ -32,6 +32,7 @@ public class IndexListDao {
 	
 	public List<IndexListBean> getBean() throws Exception {
 		String jsonString = getJSON();
+		jsonString = jsonString.replace("[]", "null");
 		Gson gson = new Gson();
 		Type listType = new TypeToken<List<IndexListBean>>(){}.getType(); 
 		List<IndexListBean> listBean = null;

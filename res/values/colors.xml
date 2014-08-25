@@ -2,6 +2,7 @@
 <resources>
 
     <!--template-->
+    <color name="videoheader_bg">#99000000</color>
 	<color name="background">#fff0f0f0</color>
 	<color name="list_divider">#ffe0e0e0</color>
 

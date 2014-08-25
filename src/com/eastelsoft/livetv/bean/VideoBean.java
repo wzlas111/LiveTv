@@ -13,6 +13,7 @@ public class VideoBean {
 	
 	public String getUrl() {
 		return host + "/" + filepath + filename.replace("m3u8", "mp4");
+//		return host + "/" + filepath + filename;
 	}
 	
 	public String getHost() {
