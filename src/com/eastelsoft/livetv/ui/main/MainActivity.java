@@ -1,9 +1,8 @@
 package com.eastelsoft.livetv.ui.main;
 
-
 import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -73,7 +72,7 @@ public class MainActivity extends BaseActivity {
 		LiveFragment liveFragment = getLiveFragment();
 		ColumnFragment columnFragment = getColumnFragment();
 		
-		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		if (!homeFragment.isAdded()) {
 			transaction.add(R.id.content, homeFragment, HomeFragment.class.getName());
 		}
@@ -86,7 +85,7 @@ public class MainActivity extends BaseActivity {
 		
 		if (!transaction.isEmpty()) {
 			transaction.commit();
-			getFragmentManager().executePendingTransactions();
+			getSupportFragmentManager().executePendingTransactions();
 		}
 	}
 	
@@ -141,7 +140,7 @@ public class MainActivity extends BaseActivity {
 	};
 	
 	private void setFragment(int position) {
-		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		transaction.hide(getHomeFragment());
 		transaction.hide(getLiveFragment());
 		transaction.hide(getColumnFragment());
@@ -162,7 +161,7 @@ public class MainActivity extends BaseActivity {
 	}
 	
 	public HomeFragment getHomeFragment() {
-		HomeFragment fragment = (HomeFragment)getFragmentManager().findFragmentByTag(HomeFragment.class.getName());
+		HomeFragment fragment = (HomeFragment)getSupportFragmentManager().findFragmentByTag(HomeFragment.class.getName());
 		if (fragment == null) {
 			fragment = new HomeFragment();
 		}
@@ -170,7 +169,7 @@ public class MainActivity extends BaseActivity {
 	}
 	
 	public LiveFragment getLiveFragment() {
-		LiveFragment fragment = (LiveFragment)getFragmentManager().findFragmentByTag(LiveFragment.class.getName());
+		LiveFragment fragment = (LiveFragment)getSupportFragmentManager().findFragmentByTag(LiveFragment.class.getName());
 		if (fragment == null) {
 			fragment = new LiveFragment();
 		}
@@ -178,7 +177,7 @@ public class MainActivity extends BaseActivity {
 	}
 	
 	public ColumnFragment getColumnFragment() {
-		ColumnFragment fragment = (ColumnFragment)getFragmentManager().findFragmentByTag(ColumnFragment.class.getName());
+		ColumnFragment fragment = (ColumnFragment)getSupportFragmentManager().findFragmentByTag(ColumnFragment.class.getName());
 		if (fragment == null) {
 			fragment = new ColumnFragment();
 		}

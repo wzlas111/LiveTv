@@ -3,12 +3,13 @@ package com.eastelsoft.livetv.ui.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.LoaderManager.LoaderCallbacks;
-import android.content.AsyncTaskLoader;
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
-import android.content.Loader;
 import android.os.Bundle;
+import android.support.v4.app.LoaderManager.LoaderCallbacks;
+import android.support.v4.content.AsyncTaskLoader;
+import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -52,6 +53,7 @@ public class HomeFragment extends BaseFragment implements LoaderCallbacks<List<I
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.home_fragment, container, false);
 		buildListView(inflater, view);
+		buildActionBar();
 		return view;
 	}
 	
@@ -64,6 +66,11 @@ public class HomeFragment extends BaseFragment implements LoaderCallbacks<List<I
 		pullToRefreshListView.setOnRefreshListener(refreshListener);
 		pullToRefreshListView.setOnItemClickListener(listitemClickListener);
 		pullToRefreshListView.setOnLastItemVisibleListener(lastItemVisibleListener);
+	}
+	
+	private void buildActionBar() {
+		ActionBar actionBar = getActivity().getActionBar();
+		actionBar.setTitle(getString(R.string.bar_home_tile));
 	}
 	
 	private void buildListView(LayoutInflater inflater, View view) {
