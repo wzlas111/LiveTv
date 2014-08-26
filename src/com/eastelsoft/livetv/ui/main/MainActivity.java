@@ -39,8 +39,10 @@ public class MainActivity extends BaseActivity {
 		super.onResume();
 		initActionBar();
 		btn_home.setChecked(true);
+		
 		setTextColor(0);
 		setFragment(0);
+		System.out.println("main settitle");
 	}
 	
 	@Override
@@ -63,6 +65,7 @@ public class MainActivity extends BaseActivity {
 	
 	private void initActionBar() {
 		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayShowTitleEnabled(true);
 		actionBar.setTitle(getString(R.string.home_title));
 		actionBar.setDisplayShowHomeEnabled(false);
 	}
@@ -147,12 +150,15 @@ public class MainActivity extends BaseActivity {
 		switch (position) {
 		case 0:
 			transaction.show(getHomeFragment());
+			getHomeFragment().buildActionBar();
 			break;
 		case 1:
 			transaction.show(getLiveFragment());
+			getLiveFragment().buildActionBar();
 			break;
 		case 2:
 			transaction.show(getColumnFragment());
+			getColumnFragment().buildActionBar();
 			break;
 		default:
 			break;

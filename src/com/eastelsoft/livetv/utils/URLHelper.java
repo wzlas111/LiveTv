@@ -9,5 +9,6 @@ public class URLHelper {
 
     //load data
     public static final String URL_INDEX_LIST = URL_BASE + "indexlist.php";
+    public static final String URL_CHANNEL_LIST = URL_BASE + "channel.php";
     
 }

@@ -46,20 +46,29 @@ public class HomeFragment extends BaseFragment implements LoaderCallbacks<List<I
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setRetainInstance(true);
+		System.out.println("HomeFragment onCreate");
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.home_fragment, container, false);
-		buildListView(inflater, view);
-		buildActionBar();
+		System.out.println("HomeFragment onCreateView");
 		return view;
+	}
+	
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		buildListView(getActivity().getLayoutInflater(), view);
 	}
 	
 	@Override
 	public void onResume() {
 		super.onResume();
+		System.out.println("HomeFragment onResume");
+		
 		mAdapter = new HomeAdapter(this, mData);
 		getListView().setAdapter(mAdapter);
 		getLoaderManager().initLoader(NEW_LOADER_ID, null, this);
@@ -68,9 +77,11 @@ public class HomeFragment extends BaseFragment implements LoaderCallbacks<List<I
 		pullToRefreshListView.setOnLastItemVisibleListener(lastItemVisibleListener);
 	}
 	
-	private void buildActionBar() {
+	public void buildActionBar() {
 		ActionBar actionBar = getActivity().getActionBar();
+		actionBar.setDisplayShowTitleEnabled(true);
 		actionBar.setTitle(getString(R.string.bar_home_tile));
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 	}
 	
 	private void buildListView(LayoutInflater inflater, View view) {
