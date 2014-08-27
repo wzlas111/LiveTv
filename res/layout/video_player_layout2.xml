@@ -4,9 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
     
-    <include layout="@layout/video_header"
-        android:layout_alignParentTop="true"/>
-
     <io.vov.vitamio.widget.VideoView
         android:id="@+id/surface_view"
         android:layout_width="fill_parent"

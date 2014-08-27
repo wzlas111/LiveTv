@@ -24,14 +24,12 @@ public class LiveFragment extends BaseFragment{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
-		System.out.println("LiveFragment onCreate");
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.live_fragment, container, false);
-		System.out.println("LiveFragment onCreateView");
 		return view;
 	}
 	
@@ -50,7 +48,6 @@ public class LiveFragment extends BaseFragment{
 	@Override
 	public void onResume() {
 		super.onResume();
-		System.out.println("LiveFragment onResume");
 	}
 	
 	private void buildView(View view) {
